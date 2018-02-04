@@ -53,15 +53,15 @@
 
 // Objects
 
-var woman = {
-  name: 'Olga',
-  age: 50,
-  sayname: function() {
-    return this.name
-  }
-}
-
-console.log(woman.name, woman['age'], woman.sayname());
+// var woman = {
+//   name: 'Olga',
+//   age: 50,
+//   sayname: function() {
+//     return this.name
+//   }
+// }
+// 
+// console.log(woman.name, woman['age'], woman.sayname());
 
 
 

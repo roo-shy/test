@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Transition</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="keys">
+      <div data-key="65" class="key">
+        <kbd>A</kbd>
+      </div>
+      <div data-key="83" class="key">
+        <kbd>S</kbd>
+      </div>
+    
+    <audio data-key="65" src="sounds/clap.wav"></audio>
+      <audio data-key="83" src="sounds/hihat.wav"></audio>
+      
+    <script>
+    window.addEventListener('keydown', function(e) {
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+      const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+      if(!audio) return; //stops the function
+      audio.currentTime = 0; //rewinding back to start
+      audio.play();
+      key.classList.add('play');
+    });
+    
+    function removeTransition(e) {
+      if(e.propertyName !== "transform") return;
+      console.log(this);
+      this.classList.remove('play');
+    }
+    
+    const keys = document.querySelectorAll('.key');
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+    console.log(keys);
+    </script>
+  </body>
+</html>

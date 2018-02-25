@@ -175,14 +175,6 @@ switch
 //   console.log(item);
 // }
 
-// var num = 0;
-// 
-// for(var n = 0; n < 10; n++) {
-//   if (n === 5) {
-//     break;// continue
-//   }
-//   num++;
-// }
-// console.log(num);
+ 
 
 
